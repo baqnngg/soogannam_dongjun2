@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>거제도 수간남 신동준</title>
+  <style>
+    body {
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      background-size: 600% 600%;
+      animation: bgMove 10s infinite alternate;
+      overflow: hidden;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+      color: white;
+      text-shadow: 3px 3px 0 black, -3px -3px 0 cyan;
+      animation: shake 0.2s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(2px, 2px); }
+      25% { transform: translate(-2px, -2px); }
+      50% { transform: translate(2px, -2px); }
+      75% { transform: translate(-2px, 2px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .photo {
+      position: absolute;
+      width: 150px;
+      border: 5px solid white;
+      border-radius: 15px;
+      animation: float 5s infinite ease-in-out alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px) rotate(0deg); }
+      to { transform: translateY(200px) rotate(20deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>거제도 수간남 신동준 🐐🔥</h1>
+
+  <img src="1.jpg" class="photo" style="top:100px; left:50px;">
+  <img src="1.jpg" class="photo" style="top:200px; left:400px;">
+  <img src="1.jpg" class="photo" style="top:300px; left:700px;">
+
+  <script>
+    // 랜덤하게 떠다니는 효과
+    const photos = document.querySelectorAll(".photo");
+    photos.forEach(photo => {
+      setInterval(() => {
+        photo.style.top = Math.random() * window.innerHeight + "px";
+        photo.style.left = Math.random() * window.innerWidth + "px";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
